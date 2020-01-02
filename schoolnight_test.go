@@ -1,0 +1,55 @@
+package schoolnight
+
+import (
+	"testing"
+	"time"
+)
+
+type testSet struct {
+	Name  string
+	Month time.Month
+	Day   int
+	want  bool
+}
+
+func TestCheck(t *testing.T) {
+	// Using the current year will have the nice side effect that the test will
+	// start to fail if this package isn't kept up to date.
+	year := time.Now().Year()
+
+	testData := []testSet{
+		{
+			Name:  "Christmas Eve",
+			Month: time.December,
+			Day:   24,
+			want:  false,
+		},
+		{
+			Name:  "New Year's Eve",
+			Month: time.December,
+			Day:   31,
+			want:  false,
+		},
+		{
+			Name:  "Thanksgiving Monday",
+			Month: time.November,
+			Day:   thanksgivingDay().AddDate(0, 0, -3).Day(),
+			want:  true,
+		},
+	}
+	for _, ts := range testData {
+		testDay := time.Date(year, ts.Month, ts.Day, 0, 0, 0, 0, time.Local)
+		t.Logf("Testing day: %s", testDay)
+		got := Check(testDay)
+		if ts.want != got {
+			t.Errorf("%s: Check(%s), want: %t, got: %t", ts.Name, testDay, ts.want, got)
+		}
+	}
+}
+
+// returns the time.Time of Thanksgiving Day, the 4th Thursday in November
+func thanksgivingDay() time.Time {
+	o := time.Date(time.Now().Year(), time.November, 1, 0, 0, 0, 0, time.Local)
+	d := ((11 - int(o.Weekday())) % 7) // first Thursday in November
+	return o.AddDate(0, 0, 21+d)       // 3 thursdays later
+}
