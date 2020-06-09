@@ -36,6 +36,12 @@ func TestCheck(t *testing.T) {
 			Day:   thanksgivingDay().AddDate(0, 0, -3).Day(),
 			want:  true,
 		},
+		{
+			Name:  "A Summer Wed in July",
+			Month: time.July,
+			Day:   summerWednesday().Day(),
+			want:  false,
+		},
 	}
 	for _, ts := range testData {
 		testDay := time.Date(year, ts.Month, ts.Day, 0, 0, 0, 0, time.Local)
@@ -52,4 +58,12 @@ func thanksgivingDay() time.Time {
 	o := time.Date(time.Now().Year(), time.November, 1, 0, 0, 0, 0, time.Local)
 	d := ((11 - int(o.Weekday())) % 7) // first Thursday in November
 	return o.AddDate(0, 0, 21+d)       // 3 thursdays later
+}
+
+// summerWednesday returns the first Wed in July of the current year, as a
+// representative day in Summer
+func summerWednesday() time.Time {
+	o := time.Date(time.Now().Year(), time.July, 1, 0, 0, 0, 0, time.Local)
+	d := ((10 - int(o.Weekday())) % 7) // first Thursday in November
+	return o.AddDate(0, 0, d)
 }

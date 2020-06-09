@@ -19,7 +19,10 @@ var (
 		"2020-12-25", // Christmas Day
 		"2021-01-01", // New Year's Day
 	}
-	holidayMap map[string]struct{}
+	summerStart  = "2020-05-29"
+	summerEnd    = "2020-08-23"
+	sStart, sEnd time.Time
+	holidayMap   map[string]struct{}
 )
 
 func init() {
@@ -35,6 +38,15 @@ func init() {
 		beforeStr := fmt.Sprintf("%d-%d-%d", b.Year(), b.Month(), b.Day())
 		holidayMap[beforeStr] = struct{}{}
 	}
+	var err error
+	sStart, err = time.Parse("2006-01-02", summerStart)
+	if err != nil {
+		panic(err)
+	}
+	sEnd, err = time.Parse("2006-01-02", summerEnd)
+	if err != nil {
+		panic(err)
+	}
 }
 
 // Check returns true if 'when' falls on a school night.
@@ -49,5 +61,10 @@ func Check(when time.Time) bool {
 	if _, ok := holidayMap[wt]; ok {
 		return false
 	}
+
+	if when.After(sStart) && when.Before(sEnd) {
+		return false
+	}
+
 	return true
 }
