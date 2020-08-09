@@ -20,7 +20,7 @@ var (
 		"2021-01-01", // New Year's Day
 	}
 	summerStart  = "2020-05-29"
-	summerEnd    = "2020-08-23"
+	summerEnd    = "2020-08-09"
 	sStart, sEnd time.Time
 	holidayMap   map[string]struct{}
 )
