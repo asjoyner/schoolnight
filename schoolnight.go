@@ -16,8 +16,32 @@ var (
 		"2020-05-08", // Workday
 		"2020-05-25", // Memorial Day
 		"2020-06-04", // First day of summer
+		"2020-10-06", // Fall break
+		"2020-10-07", // Fall break
+		"2020-10-08", // Fall break
+		"2020-11-25", // Thanksgiving Break
+		"2020-11-26", // Thanksgiving Break
+		"2020-11-27", // Thanksgiving Break
+		"2020-12-21", // Winter break
+		"2020-12-22", // Winter break
+		"2020-12-23", // Winter break
+		"2020-12-24", // Winter break
 		"2020-12-25", // Christmas Day
+		"2020-12-28", // Winter Break
+		"2020-12-29", // Winter Break
+		"2020-12-30", // Winter Break
+		"2020-12-31", // Winter Break
 		"2021-01-01", // New Year's Day
+		"2021-01-04", // Teacher Workday
+		"2021-01-18", // MLK Day
+		"2021-02-15", // Teacher Workday
+		"2021-04-02", // Spring Break
+		"2021-04-05", // Spring Break
+		"2021-04-06", // Spring Break
+		"2021-04-07", // Spring Break
+		"2021-04-08", // Spring Break
+		"2021-04-09", // Spring Break
+		"2021-05-03", // Teacher Workday
 	}
 	summerStart  = "2020-05-29"
 	summerEnd    = "2020-08-09"
