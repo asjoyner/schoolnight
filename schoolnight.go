@@ -43,11 +43,18 @@ var (
 		"2021-04-09", // Spring Break
 		"2021-05-03", // Teacher Workday
 	}
-	summerStart  = "2020-05-29"
-	summerEnd    = "2020-08-09"
-	sStart, sEnd time.Time
-	holidayMap   map[string]struct{}
+	summers = map[int]summer{
+		2020: {"2020-05-29", "2020-08-09"},
+		2021: {"2020-05-31", "2021-08-23"},
+	}
+	holidayMap map[string]struct{}
 )
+
+// summer represents the start and end dates of summer vacation
+type summer struct {
+	Start string
+	End   string
+}
 
 func init() {
 	// calculate the day before holidays as "not school nights", and convert the
@@ -61,15 +68,6 @@ func init() {
 		b := t.AddDate(0, 0, -1)
 		beforeStr := fmt.Sprintf("%d-%d-%d", b.Year(), b.Month(), b.Day())
 		holidayMap[beforeStr] = struct{}{}
-	}
-	var err error
-	sStart, err = time.Parse("2006-01-02", summerStart)
-	if err != nil {
-		panic(err)
-	}
-	sEnd, err = time.Parse("2006-01-02", summerEnd)
-	if err != nil {
-		panic(err)
 	}
 }
 
@@ -86,6 +84,17 @@ func Check(when time.Time) bool {
 		return false
 	}
 
+	// There are no school nights in summer.
+	thisYear := time.Now().Year()
+
+	sStart, err := time.Parse("2006-01-02", summers[thisYear].Start)
+	if err != nil {
+		return false
+	}
+	sEnd, err := time.Parse("2006-01-02", summers[thisYear].End)
+	if err != nil {
+		return false
+	}
 	if when.After(sStart) && when.Before(sEnd) {
 		return false
 	}

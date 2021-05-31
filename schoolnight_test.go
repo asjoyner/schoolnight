@@ -53,6 +53,17 @@ func TestCheck(t *testing.T) {
 	}
 }
 
+func TestSummersParse(t *testing.T) {
+	for year, s := range summers {
+		if _, err := time.Parse("2006-01-02", summers[year].Start); err != nil {
+			t.Errorf("Summer Start for %d of %q does not parse: %s", year, s.Start, err)
+		}
+		if _, err := time.Parse("2006-01-02", summers[year].End); err != nil {
+			t.Errorf("Summer End for %d of %q does not parse: %s", year, s.End, err)
+		}
+	}
+}
+
 // returns the time.Time of Thanksgiving Day, the 4th Thursday in November
 func thanksgivingDay() time.Time {
 	o := time.Date(time.Now().Year(), time.November, 1, 0, 0, 0, 0, time.Local)
