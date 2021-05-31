@@ -16,9 +16,9 @@ var (
 		"2020-05-08", // Workday
 		"2020-05-25", // Memorial Day
 		"2020-06-04", // First day of summer
-		"2020-10-06", // Fall break
 		"2020-10-07", // Fall break
 		"2020-10-08", // Fall break
+		"2020-10-09", // Fall break
 		"2020-11-25", // Thanksgiving Break
 		"2020-11-26", // Thanksgiving Break
 		"2020-11-27", // Thanksgiving Break
