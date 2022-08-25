@@ -68,11 +68,39 @@ var (
 		"2022-04-20", // Spring Break
 		"2022-04-21", // Spring Break
 		"2022-05-02", // Teacher Workday
+		"2022-09-05", // Teacher Workday
+		"2022-10-05", // Fall Break
+		"2022-10-06", // Fall Break
+		"2022-10-07", // Fall Break
+		"2022-11-01", // Teacher Halloween Safety Workday
+		"2022-11-23", // Thanksgiving
+		"2022-11-24", // Thanksgiving
+		"2022-11-25", // Thanksgiving
+		"2022-12-19", // Winter Break
+		"2022-12-20", // Winter Break
+		"2022-12-21", // Winter Break
+		"2022-12-22", // Winter Break
+		"2022-12-23", // Winter Break
+		"2022-12-26", // Winter Break
+		"2022-12-27", // Winter Break
+		"2022-12-28", // Winter Break
+		"2022-12-29", // Winter Break
+		"2022-12-30", // Winter Break
+		"2023-01-02", // Teacher Workday
+		"2023-01-16", // MLK Teacher Workday
+		"2023-02-10", // Teacher Workday
+		"2023-04-07", // Teacher Workday
+		"2023-04-10", // Teacher Workday
+		"2023-04-11", // Teacher Workday
+		"2023-04-12", // Teacher Workday
+		"2023-04-13", // Teacher Workday
+		"2023-04-14", // Teacher Workday
 	}
 	summers = map[int]summer{
 		2020: {"2020-05-29", "2020-08-09"},
-		2021: {"2020-05-29", "2021-08-17"},
-		2022: {"2021-05-27", "2022-08-17"},
+		2021: {"2021-05-29", "2021-08-17"},
+		2022: {"2022-05-27", "2022-08-23"},
+		2022: {"2023-05-27", "2023-08-23"},
 	}
 	holidayMap map[string]struct{}
 )
