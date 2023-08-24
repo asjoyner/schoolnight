@@ -95,12 +95,58 @@ var (
 		"2023-04-12", // Teacher Workday
 		"2023-04-13", // Teacher Workday
 		"2023-04-14", // Teacher Workday
+
+		"2023-08-16", // Teacher Workdays
+		"2023-08-17", // Teacher Workdays
+		"2023-08-18", // Teacher Workdays
+		"2023-08-21", // Mandatory Workdays
+		"2023-08-22", // Teacher Workdays
+		"2023-08-23", // Teacher Workdays
+		"2023-08-24", // Teacher Workdays
+		"2023-08-25", // Teacher Workdays
+		"2023-09-04", // Holidays
+		"2023-10-23", // Teacher Workdays
+		"2023-11-07", // Teacher Workdays
+		"2023-11-10", // Holidays
+		"2023-11-22", // Teacher Workdays
+		"2023-11-23", // Holidays
+		"2023-11-24", // Holidays
+		"2023-12-25", // Holidays
+		"2023-12-26", // Holidays
+		"2023-12-27", // Holidays
+		"2023-12-28", // Vacation
+		"2023-12-29", // Vacation
+		"2024-01-01", // Holidays
+		"2024-01-02", // Vacation
+		"2024-01-03", // Vacation
+		"2024-01-04", // Vacation
+		"2024-01-05", // Teacher Workdays
+		"2024-01-08", // Teacher Workdays
+		"2024-01-15", // Holidays
+		"2024-03-05", // Teacher Workdays
+		"2024-03-28", // Teacher Workdays
+		"2024-03-29", // Holidays
+		"2024-04-01", // Vacation
+		"2024-04-02", // Vacation
+		"2024-04-03", // Vacation
+		"2024-04-04", // Vacation
+		"2024-04-05", // Vacation
+		"2024-05-03", // Teacher Workdays
+		"2024-05-27", // Holidays
+		"2024-06-03", // Mandatory Workdays
+		"2024-06-04", // Teacher Workdays
+		"2024-06-06", // Teacher Workdays
+		"2024-06-07", // Teacher Workdays
+		"2024-06-10", // Teacher Workdays
+		"2024-06-11", // Teacher Workdays
+		"2034-06-05", // Teacher Workdays
 	}
 	summers = map[int]summer{
 		2020: {"2020-05-29", "2020-08-09"},
 		2021: {"2021-05-29", "2021-08-17"},
 		2022: {"2022-05-27", "2022-08-23"},
-		2023: {"2023-05-27", "2023-08-23"},
+		2023: {"2023-05-27", "2023-08-27"},
+		2024: {"2024-05-31", "2024-08-25"},
 	}
 	holidayMap map[string]struct{}
 )
