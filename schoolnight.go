@@ -111,6 +111,12 @@ var (
 		"2023-11-22", // Teacher Workdays
 		"2023-11-23", // Holidays
 		"2023-11-24", // Holidays
+		"2023-12-15", // Excempt teacher exam day
+		"2023-12-18", // Excempt teacher exam day
+		"2023-12-19", // Excempt teacher exam day
+		"2023-12-20", // Excempt teacher exam day
+		"2023-12-21", // Excempt teacher exam day
+		"2023-12-22", // Excempt teacher exam day
 		"2023-12-25", // Holidays
 		"2023-12-26", // Holidays
 		"2023-12-27", // Holidays
